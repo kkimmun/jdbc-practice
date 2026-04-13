@@ -1,0 +1,16 @@
+package com.kh.species.controller;
+
+import com.kh.species.model.dto.SpeciesDto;
+import com.kh.species.model.service.SpeciesService;
+
+public class SpeciesController {
+	private SpeciesService ss = new SpeciesService();
+	
+	public void save(String speciesName, String speciesClass) {
+		SpeciesDto sd = new SpeciesDto(speciesName, speciesClass);
+		ss.save(sd);
+		
+		
+	}
+
+}

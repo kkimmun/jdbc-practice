@@ -1,0 +1,35 @@
+package com.kh.restaurant.view;
+
+import java.util.Scanner;
+import com.kh.restaurant.controller.RestaurantController;
+
+public class RestaurantView {
+	
+	private Scanner sc = new Scanner(System.in);
+	private RestaurantController rc = new RestaurantController();
+	
+	public void mainMenu() {
+		System.out.println("배달가능한 음식점 정보 관리 프로그램입니다.");
+		
+		while(true) {
+			System.out.println("어떤 기능을 사용하시겠습니까? ");
+			System.out.println("1. 전체 조회하기 ");
+			System.out.println("2. 음식점 정보 추가하기");
+			System.out.println("3. 음식점 정보 수정하기");
+			System.out.println("4. 음식점 정보 삭제하기");
+			System.out.println("9. 종료하기");
+			
+			System.out.println("메뉴를 선택해주세요");
+			String menu = sc.nextLine();
+			
+			switch(menu) {
+				case "1" : break;
+				case "2" : break;
+				case "3" : break;
+				case "4" : break;
+				case "9" : sc.close(); return;
+			}
+		}
+	}
+
+}

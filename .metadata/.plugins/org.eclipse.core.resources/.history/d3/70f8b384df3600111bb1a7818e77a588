@@ -1,0 +1,52 @@
+package com.kh.species.view;
+
+import java.util.Scanner;
+
+import com.kh.species.controller.SpeciesController;
+
+public class SpeciesView {
+	private Scanner sc = new Scanner(System.in);
+	private SpeciesController speciesController = new SpeciesController();
+	
+	public void mainMenu() {
+		while(true) {
+			System.out.println("--- 종 관리 프로그램 ---");
+			System.out.println("1. 종 추가하기");
+			System.out.println("2. 종 전체조회하기");
+			System.out.println("3. 종 정보변경하기");
+			System.out.println("4. 종 삭제하기");
+			System.out.println("9. 프로그램 종료하기");
+			
+			System.out.print("메뉴를 선택해주세요");
+			String menu = sc.nextLine();
+			
+			switch(menu) {
+			case "1" : save();break;
+			case "2" : break;
+			case "3" : break;
+			case "4" : break;
+			case "9" : sc.close();return;
+			default : System.out.println("없는 메뉴입니다.");
+			}
+		}
+	}
+
+	
+	private void save() {
+		
+		System.out.println("종 추가하는 기능입니다.");
+		System.out.print("종 이름을 입력하세요 >");
+		String speciesName = sc.nextLine();
+		System.out.print("종 분류를 입력하세요 >");
+		String speciesClass = sc.nextLine();
+		
+		// View할 일 끝
+		speciesController.save(speciesName, speciesClass);
+		
+		
+		
+		
+	}
+	
+	
+}

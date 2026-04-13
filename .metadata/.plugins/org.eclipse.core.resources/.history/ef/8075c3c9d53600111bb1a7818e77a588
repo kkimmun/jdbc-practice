@@ -1,0 +1,12 @@
+package com.kh.species.model.dao;
+
+import com.kh.species.model.dto.SpeciesDto;
+
+public class SpeciesDao {
+
+	public void save(SpeciesDto sd) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

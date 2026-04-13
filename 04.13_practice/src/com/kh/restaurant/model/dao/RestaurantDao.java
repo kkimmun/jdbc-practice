@@ -1,0 +1,36 @@
+package com.kh.restaurant.model.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.kh.restaurant.model.dto.RestaurantDto;
+
+public class RestaurantDao {
+	
+	
+	public List<RestaurantDto> findAll(){
+		
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rset = null;
+		List<RestaurantDto> list = new ArrayList();
+		
+		String sql = """
+							SELECT
+									RESTAURANT_ID, 
+									RESTAURANT_NAME,
+									RESTAURANT_ADDRESS,
+									BUSINNESS_DAYS,
+									BUSINNESS_HOURS,
+									OPEN_DATE
+								FROM RESTAURANT
+								ORDER BY RESTAURANT_ID
+						""";
+		
+		
+	}
+	
+}

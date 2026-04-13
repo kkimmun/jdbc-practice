@@ -1,0 +1,5 @@
+package com.kh.restaurant.model.service;
+
+public class RestaurantService {
+
+}

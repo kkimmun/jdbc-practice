@@ -1,0 +1,11 @@
+package com.kh.restaurant.view;
+
+import com.kh.restaurant.model.service.RestaurantService;
+
+public class RestaurantRun {
+	public static void main(String[] args) {
+		
+		new RestaurantService.mainMenu(); 
+		
+	}
+}

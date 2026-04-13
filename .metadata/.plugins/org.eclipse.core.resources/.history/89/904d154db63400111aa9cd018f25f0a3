@@ -1,0 +1,43 @@
+package com.kh.start.run;
+
+import java.sql.Connection;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class InsertRestaurantRun {
+
+	public static void main(String[] args) {
+		Connection conn = null;
+		Statement stmt = null;
+		int result = 0;
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("RESTAURANT_ID를 입력해주세요 > ");
+		String restaurantId = sc.nextLine();
+		System.out.println("RESTAURANT_NAME를 입력해주세요 > ");
+		String restaurantName = sc.nextLine();
+		System.out.println("RESTAURANT_ADDRESS를 입력해주세요 > ");
+		String restaurantAddress = sc.nextLine();
+		System.out.println("BUSINNESS_DAY를 입력해주세요 > ");
+		String businnessDay = sc.nextLine();
+		System.out.println("BUSINNESS_HOUR를 입력해주세요 > ");
+		String businnessHour = sc.nextLine();
+		System.out.println("OPEN_DATE를 입력해주세요 > ");
+		String openDate = sc.nextLine();
+		
+		String sql = null;
+		StringBuilder sb = new StringBuilder();
+		sb.append("INSERT INTO RESTAURANT VALUES(");
+		sb.append("'" + restaurantId + "', ");
+		sb.append("'" + restaurantName + "', ");
+		sb.append("'" + restaurantAddress + "', ");
+		sb.append("'" + businnessDay + "', ");
+		sb.append("'" + businnessHour + "', ");
+		sb.append("TO_DATE("+openDate +")");
+		
+		sql = sb.toString();
+		System.out.println(sql);
+		
+	}
+
+}

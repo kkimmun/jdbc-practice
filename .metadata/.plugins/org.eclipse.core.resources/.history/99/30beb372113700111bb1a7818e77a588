@@ -1,0 +1,10 @@
+package com.kh.restaurant.view;
+
+public class RestaurantView {
+
+	public static void mainMenu() {
+		
+		
+	}
+
+}
