@@ -1,0 +1,31 @@
+package com.kh.animal.model.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.kh.animal.model.dto.AnimalDto;
+
+public class AnimalDao {
+	
+	public int save(SqlSession session, AnimalDto animal) {
+		// SqlSession 타입이 제공하는 메소드를 호출해서
+		// SQL 문을 찾아서 실행하고 결과도 받아올 수 있음
+		// SqlSession.SQL문 메소드("namespace속성값.SQL요소id속성값");
+		return session.insert("animalMapper.save", animal);
+	}
+
+	public List<AnimalDto> findAll(SqlSession session) {
+		// 조회결과가 존재하지 않는다면 빈 리스트를 반환
+		return session.selectList("animalMapper.findAll");
+	}
+
+	public AnimalDto findById(SqlSession session, String id) {
+		// 조회결과가 존재하지 않는다면 null 을 반환
+		return session.selectOne("animalMapper.findById", id);
+	}
+
+	public List<AnimalDto> findByKeyword(SqlSession session, String keyword) {
+		return session.selectList("animalMapper.findByKeyword", keyword);
+	}
+}

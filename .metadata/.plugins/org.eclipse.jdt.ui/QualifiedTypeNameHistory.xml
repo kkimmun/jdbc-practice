@@ -6,4 +6,7 @@
     <fullyQualifiedTypeName name="com.kh.member.exception.MemberIdToLargeException"/>
     <fullyQualifiedTypeName name="com.kh.keeper.common.JdbcTemplate"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="com.kh.animal.common.Template"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+    <fullyQualifiedTypeName name="com.kh.animal.model.dao.AnimalDao"/>
 </qualifiedTypeNameHistroy>
