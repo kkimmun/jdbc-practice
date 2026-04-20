@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="menuMapper">
+
+    <resultMap id="menuResultSet" type="menu">
+        <id     column="MENU_NO"   property="menuNo"/>
+        <result column="REST_NO"   property="restNo"/>
+        <result column="MENU_NAME" property="menuName"/>
+        <result column="PRICE"     property="price"/>
+        <result column="SOLD_OUT"  property="soldOut"/>
+    </resultMap>
+
+    <select id="selectMenuListByRestNo" 
+    		parameterType="_int" 
+    		resultMap="menuResultSet">
+        
+        SELECT  
+        		MENU_NO,
+        		REST_NO,
+        		MENU_NAME,
+        		PRICE,
+        		SOLD_OUT
+        	FROM 
+        		MENU
+         	WHERE 
+         		REST_NO = #{restNo}
+         ORDER 
+         	BY 
+         		MENU_NO ASC
+    </select>
+
+</mapper>

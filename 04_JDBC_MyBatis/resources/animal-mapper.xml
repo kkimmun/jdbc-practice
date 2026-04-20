@@ -40,7 +40,7 @@
   	 <!--
   	 	 *resultMap : ResultSet 으로부터 조회한 컬럼의 값을 하나씩 뽑아서 우리가 만든 VO / DTO객체에 필드에 담는 코드를 대신해주는 역할
   	 	 
-  	 	 while(rset.next()){       << 한땀한땀   이 코드를 대체함
+  	 	 whil.e(rset.next()){       << 한땀한땀   이 코드를 대체함
   	 	 	AnimalDto animal = new AnimalDto(rset)
   	 	 }
   	 	 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="com.kh.member.exception.MemberIdToLargeException"/>
@@ -9,4 +8,9 @@
     <fullyQualifiedTypeName name="com.kh.animal.common.Template"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="com.kh.animal.model.dao.AnimalDao"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="com.kh.delivery.common.Template"/>
+    <fullyQualifiedTypeName name="com.kh.delivery.dao.MemberDao"/>
 </qualifiedTypeNameHistroy>

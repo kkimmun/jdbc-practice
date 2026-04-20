@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="memberMapper">
+
+    <resultMap id="memberResultSet" type="member">
+        <id     column="MEMBER_NO"   property="memberNo"/>
+        <result column="MEMBER_ID"   property="memberId"/>
+        <result column="MEMBER_PW"   property="memberPw"/>
+        <result column="MEMBER_NAME" property="memberName"/>
+        <result column="ADDRESS"     property="address"/>
+        <result column="ENROLL_DATE" property="enrollDate"/>
+    </resultMap>
+	
+	<insert id="signIn" 
+			parameterType="member">
+        INSERT 
+        INTO 
+        	DELI_MEMBER
+        VALUES 
+        	(
+        	SEQ_MEMBER_NO.NEXTVAL, 
+        	#{memberId}, 
+        	#{memberPw}, 
+        	#{memberName}, 
+        	#{address}
+        	)
+    </insert>
+
+    <select id="signUp" 
+    		parameterType="member" 
+    		resultMap="memberResultSet">
+        SELECT 
+        		MEMBER_NO,
+        		MEMBER_ID,
+        		MEMBER_PW,
+        		MEMBER_NAME,
+        		ADDRESS,
+        		ENROLL_DATE
+        	FROM 
+        		DELI_MEMBER 
+         WHERE 
+         	MEMBER_ID = #{memberId} AND MEMBER_PW = #{memberPw}
+    </select>
+	
+	
+	
+	</mapper>

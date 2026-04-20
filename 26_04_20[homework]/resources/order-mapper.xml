@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<resultMap id="orderResultMap" type="Order">
+    <id     property="orderNo"    column="ORDER_NO"/>
+    <result property="memberNo"   column="MEMBER_NO"/>
+    <result property="menuNo"     column="MENU_NO"/>
+    <result property="quantity"   column="QUANTITY"/>
+    <result property="orderDate"  column="ORDER_DATE"/>
+    <result property="status"     column="STATUS"/>
+    <!-- JOIN 결과 -->
+    <result property="memberName" column="MEMBER_NAME"/>
+    <result property="restName"   column="REST_NAME"/>
+    <result property="menuName"   column="MENU_NAME"/>
+    <result property="price"      column="PRICE"/>
+ </resultMap>
+
+ <select id="selectMyOrders" parameterType="_int" resultMap="orderResultMap">
+    SELECT O.ORDER_NO, O.MEMBER_NO, O.MENU_NO, O.QUANTITY,
+           O.ORDER_DATE, O.STATUS,
+           M.MEMBER_NAME,
+           R.REST_NAME,
+           MN.MENU_NAME, MN.PRICE
+      FROM ORDERS O
+      JOIN MEMBER     M  ON O.MEMBER_NO = M.MEMBER_NO
+      JOIN MENU       MN ON O.MENU_NO   = MN.MENU_NO
+      JOIN RESTAURANT R  ON MN.REST_NO  = R.REST_NO
+     WHERE O.MEMBER_NO = #{memberNo}
+     ORDER BY O.ORDER_DATE DESC
+</select>
